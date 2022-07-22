@@ -1,0 +1,64 @@
+@extends('layouts.main')
+
+@section('content')
+
+  <div class="container my-5 flex-fill">
+    <div class="row justify-content-center">
+      <div class="col-md-11">
+        <div class="card">
+          <div class="card-body">
+            <h3>{{ $book->name }}</h3>
+            <div class="row me-1">
+              <div class="col-sm-3 text-center mb-3">
+                <img class="img-fluid w-100" src="/books/{{ $book->cover }}" alt="Book Title Cover">
+              </div>
+              <div class="col-sm-9">
+                <div class="row mb-3">
+                  <p class="col-sm-4">Название</p>
+                  <p class="col-sm-8">{{ $book->name }}</p>
+                </div>
+                <div class="row mb-3">
+                  <p class="col-sm-4">Автор</p>
+                  <p class="col-sm-8">{{ $book->author }}</p>
+                </div>
+                <div class="row mb-3">
+                  <p class="col-sm-4">Синопсис</p>
+                  <p class="col-sm-8">{{ $book->synopsis }}</p>
+                </div>
+                <div class="row mb-3">
+                  <p class="col-sm-4">Жанр</p>
+                  <p class="col-sm-8">
+                    @foreach ($book->genres as $genre)
+                      {{ $genre->name }}<?= $loop->last ? '' : ', ' ?>
+                    @endforeach
+                  </p>
+                </div>
+                <div class="row mb-3">
+                  <p class="col-sm-4">Цена</p>
+                  <p class="col-sm-8">руб. {{ $book->price }}</p>
+                </div>
+
+                @auth
+                  <form action="/cart/{{ $book->id }}" method="POST" class="row justify-content-between">
+                    @csrf
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-text">Количество</span>
+                        <input type="number" min="1" class="form-control" name="quantity" placeholder="e.g. 1" value="{{ $book->quantity > 0 ? $book->quantity : 1  }}"
+                               required>
+                      </div>
+                    </div>
+                    <div class="col-sm text-end">
+                      <button type="submit" class="btn btn-dark">{{ $book->quantity > 0 ? 'Update' : 'В корзину' }}</button>
+                    </div>
+                  </form>
+                @endauth
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+@endsection
