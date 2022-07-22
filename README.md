@@ -1,4 +1,4 @@
-# Интернет-магазин книг.
+# Интернет-магазин книг
 PHP, HTML, REST API, Laravel.
 
 # Как запустить
@@ -23,7 +23,8 @@ PHP, HTML, REST API, Laravel.
 
 ![d](https://user-images.githubusercontent.com/96938106/180477274-1266a5cc-873c-4d34-a647-43937f211a4d.jpg)
 ![e](https://user-images.githubusercontent.com/96938106/180477284-a45fe1ef-ffcc-4c96-84f6-6d993da4c7ae.png)
-![f](https://user-images.githubusercontent.com/96938106/180477297-6b492f44-0468-4ac3-8ae5-96213d50bb20.jpg)
+![555](https://user-images.githubusercontent.com/96938106/180499635-2fd1ce3a-6402-4a2f-ab7c-424ee247bdc7.png)
+
 
 
 # REST API (Postman для просмотра JSON)
