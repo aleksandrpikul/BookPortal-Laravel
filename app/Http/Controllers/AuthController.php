@@ -48,7 +48,7 @@ class AuthController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('errorMessage', 'Login failed. Please try again.');
+        return back()->with('errorMessage', 'Неверный логин');
     }
 
     // Show register form
@@ -72,7 +72,7 @@ class AuthController extends Controller
 
         User::query()->create($validatedData);
 
-        return redirect('/login')->with('successMessage', 'Register successful! Please log in.');
+        return redirect('/login')->with('successMessage', 'Регистрация прошла успешно. Пожалуйста, войдите');
     }
 
     public function storeAjax(Request $req): \Illuminate\Http\JsonResponse
@@ -92,7 +92,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status' => 200,
-            'message' => "Register Successfully"
+            'message' => "Успешно"
         ]);
     }
 
@@ -116,7 +116,7 @@ class AuthController extends Controller
         $user = Auth::user();
         $user->name = $request['name'];
         $user->save();
-        return back()->with('successMessage', 'Name changed successfully');
+        return back()->with('successMessage', 'Имя успешно изменено');
     }
 
     // Handle user change password
@@ -129,10 +129,10 @@ class AuthController extends Controller
     public function updatePassword(Request $request)
     {
         if (!(Hash::check($request->get('old_password'), Auth::user()->password))) {
-            return back()->with('errorMessage', 'Your current password does not match');
+            return back()->with('errorMessage', 'Пароль не подходит');
         }
         if (strcmp($request->get('old_password'), $request->get('new_password')) === 0) {
-            return back()->with('errorMessage', 'Your current password cannot be same with the new password');
+            return back()->with('errorMessage', 'Ваш текущий пароль не может совпадать с новым');
         }
         $request->validate([
             'old_password' => 'required',
@@ -141,6 +141,6 @@ class AuthController extends Controller
         $user = Auth::user();
         $user->password = bcrypt($request->get('new_password'));
         $user->save();
-        return back()->with('successMessage', 'Password changed successfully');
+        return back()->with('successMessage', 'Пароль успешно изменен');
     }
 }

@@ -56,7 +56,7 @@
                 </div>
               </div>
 
-{{--              Genre Input--}}
+{{--Genre Input--}}
               <input value="" type="text" id="genres" class="form-control" name="genres" hidden>
 
               <div class="row mb-3">

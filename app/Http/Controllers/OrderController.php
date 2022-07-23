@@ -45,7 +45,7 @@ class OrderController extends Controller
         }
 
         $request->session()->put('items', $items);
-        return redirect('/cart')->with('successMessage', 'Cart successfully updated.');
+        return redirect('/cart')->with('successMessage', 'Обновление прошло успешно');
     }
 
     // Handle delete/remove cart item
@@ -62,7 +62,7 @@ class OrderController extends Controller
         }
 
         $request->session()->put('items', $items);
-        return redirect('/cart')->with('successMessage', 'Cart successfully updated.');
+        return redirect('/cart')->with('successMessage', 'Обновление прошло успешно');
     }
 
     // Checkout cart to complete transaction
@@ -87,7 +87,7 @@ class OrderController extends Controller
 
         $request->session()->forget('items');
 
-        return redirect('/history')->with('successMessage', 'Checkout successful! History updated.');
+        return redirect('/history')->with('successMessage', 'История обновлена успешно');
     }
 
     // View Transaction History

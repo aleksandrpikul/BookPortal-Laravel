@@ -54,9 +54,9 @@ class AdminController extends Controller
 
         if ($respond){
             $req->file('cover')->move(public_path('books'), $coverName);
-            return back()->with('successMessage', 'Insert Book Success');
+            return back()->with('successMessage', 'Книга добавлена успешно');
         }
-        return back()->with('errorMessage', 'Insert Book Failed');
+        return back()->with('errorMessage', 'Книга добавлена успешно');
 
     }
     public function bookDetail(Book $book)
@@ -100,9 +100,9 @@ class AdminController extends Controller
         $book->cover = $coverName;
 
         if ($book->save()) {
-            return redirect('/admin/book')->with('successMessage', 'Book Update Successfully');
+            return redirect('/admin/book')->with('successMessage', 'Обновление книги прошло успешно');
         }
-        return back()->with('errorMessage', 'Book Update Failed');
+        return back()->with('errorMessage', 'Обновление книги не удалось');
     }
 
     public function deleteBook(Book $book): RedirectResponse
@@ -112,9 +112,9 @@ class AdminController extends Controller
         if ($book->delete()) {
             File::delete(public_path('books/'.$cover));
             BookGenre::where('book_id', $bookId)->delete();
-            return back()->with('successMessage', 'Book Deleted Successfully');
+            return back()->with('successMessage', 'Книга успешно удалена');
         }
-        return back()->with('errorMessage', 'Book Delete Failed');
+        return back()->with('errorMessage', 'Удаление книги не удалось');
     }
 
     // Manage Genre Page
@@ -142,9 +142,9 @@ class AdminController extends Controller
         ]);
 
         if (Genre::create($validatedData)) {
-            return back()->with('successMessage', 'Genre Added Successfully');
+            return back()->with('successMessage', 'Жанр добавлен успешно');
         }
-        return back()->with('errorMessage', 'Genre Add Failed');
+        return back()->with('errorMessage', 'Добавление жанра не удалось');
     }
 
     // Handle Update Genre
@@ -156,18 +156,18 @@ class AdminController extends Controller
 
         $genre->name = $validatedData['name'];
         if ($genre->save()) {
-            return back()->with('successMessage', 'Genre Updated Successfully');
+            return back()->with('successMessage', 'Жанр успешно обновлен');
         }
-        return back()->with('errorMessage', 'Genre Update Failed');
+        return back()->with('errorMessage', 'Обновление жанра не удалось');
     }
 
     // Handle Delete Genre
     public function deleteGenre(Genre $genre)
     {
         if ($genre->delete()) {
-            return redirect('/admin/genre')->with('successMessage', 'Genre Deleted Successfully');
+            return redirect('/admin/genre')->with('successMessage', 'Жанр успешно удален');
         }
-        return back()->with('errorMessage', 'Genre Delete Failed');
+        return back()->with('errorMessage', 'Удаление жанра не удалось');
     }
 
     // Manage User Page
@@ -199,17 +199,17 @@ class AdminController extends Controller
         $user->email = $validatedData['email'];
         $user->role_id = $validatedData['role'] === 'Admin' ? 1 : 2;
         if ($user->save()) {
-            return back()->with('successMessage', 'User Updated Successfully');
+            return back()->with('successMessage', 'Пользователь успешно обновлен');
         }
-        return back()->with('errorMessage', 'User Update Failed');
+        return back()->with('errorMessage', 'Обновление пользователя не удалось');
     }
 
     // Handle Delete User
     public function deleteUser(User $user)
     {
         if ($user->delete()) {
-            return redirect('/admin/user')->with('successMessage', 'User Deleted Successfully');
+            return redirect('/admin/user')->with('successMessage', 'Пользователь успешно удален');
         }
-        return back()->with('errorMessage', 'User Delete Failed');
+        return back()->with('errorMessage', 'Удаление пользователя не удалось');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-  {{--  ADMIN--}}
+  {{--ADMIN--}}
 
   <style>
     span {
@@ -60,16 +60,9 @@
                 </div>
               </div>
 
-{{--              Genre Input--}}
+{{--Genre Input--}}
               <input value="" type="text" id="genres" class="form-control" name="genres" hidden>
-
-{{--              @if( $book->genres !== null)--}}
-{{--                @foreach($book->genres as $genre)--}}
-{{--                  <span>{{ $genre->name }} - </span>--}}
-{{--                @endforeach--}}
-{{--              @endif--}}
-
-              <div class="row mb-3">
+                              <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Цена</label>
                 <div class="col-sm-6">
                   <input value="{{ $book->price }}" type="number" class="form-control" name="price">
