@@ -1,59 +1,46 @@
-# Book Store Ala-Ala
+# Интернет-магазин книг.
+PHP, HTML, REST API, Laravel.
+# Как запустить
+1. В терминале: composer install
+2. Изменить в .env название базы данных
+3. В терминале: php artisan key:generate
+4. В терминале: php artisan migrate:fresh --seed
+5. В терминале: php artisan serve 
+6. Запустить в браузере http://127.0.0.1:8000/
 
-This is an Websites Application that made using Laravel Framework and integration with Bootstrap. It's simulate the work process of a bookstore from the point of view of admins and buyers.
+![a](https://user-images.githubusercontent.com/96938106/180477154-ede4a215-3432-4ef3-8b1e-1ee34d582ae4.png)
 
-<a href='https://bookstorealaala.000webhostapp.com/'>Click Here For Preview</a>
+![b](https://user-images.githubusercontent.com/96938106/180477172-2d19deb0-b5ba-4c4e-b001-65efe34644e3.png)
 
-<p>Registered Admin:
-admin@gmail.com
-admin
-</p>
+![с](https://user-images.githubusercontent.com/96938106/180477199-d74796c3-1c98-4e3d-8dce-0e254df862ce.png)
 
-<p>>Registerd Buyers:
-robert@gmail.com
-RobertCharis
-</p>
 
-# Features
+# CRUD
+Администратор: 
 
-- List of books arranged in card view, with pagination and search by book's name.
-- Buyers (already login) can see the the details of the book, add it to the cart and make a dummy payment. 
-- Buyers can view transaction history containing list of books, quantity, price and grand total.
-- Admin can do CRUD on Book, Genre, and User.
-- Utilization of Eloquent ORM which shows how amazing Laravel is including a many to many relationship (Book and Genre relation).
-- Admin and buyers can update their profile.
+Логин: admin@gmail.com
 
-# Dependency
-- <a href='https://laravel.com/'>Laravel 8</a>
-- <a href='https://getbootstrap.com/docs/5.0/getting-started/introduction/'>Bootstrap</a>
+Пароль: admin
 
-# Basic Setup
-- Write in terminal **[composer install](https://stackoverflow.com/questions/41975092/install-laravel-using-composer)**
-- Make a copy from .env.example into .env (File .env not included). 
-- Configure file .env according to database requirements.
-- Write in terminal **[php artisan key:generate](https://stillat.com/blog/2016/12/07/laravel-artisan-key-command-the-keygenerate-command)**
-- Write in terminal **[php artisan migrate:fresh --seed](https://laravel.com/docs/8.x/seeding#running-seeders/)**
-- After table in database already filled.
-- Then it is automatically integrated with the image resource in the folder 'public/books'
-- Write on terminal **[php artisan serve](https://laravel.com/docs/8.x/installation#installation-via-composer)** to open in the browser. Default port: 8000
+![d](https://user-images.githubusercontent.com/96938106/180477274-1266a5cc-873c-4d34-a647-43937f211a4d.jpg)
 
-# Our Teams
-- Norbertus Dewa Rucci
-- Darren Denisson Chandra
-- Nehemia Cecio Tanjung Jati
+![e](https://user-images.githubusercontent.com/96938106/180477284-a45fe1ef-ffcc-4c96-84f6-6d993da4c7ae.png)
 
-<!-- Email:
-d.rucci.2001@gmail.com
-Website Name:
-BookStoreAlaAla
-Password:
-BookStoreAlaAlaPassword
+![f](https://user-images.githubusercontent.com/96938106/180477297-6b492f44-0468-4ac3-8ae5-96213d50bb20.jpg)
 
-Database Name:
-id18984165_web_project
-Database Username:
-id18984165_web
-Database Host:
-localhost
-Password:
-BookStoreAlaAlaDatabase1_ -->
+
+
+# REST API (Postman для просмотра JSON)
+По следующим адресам можно просматривать:
+1. http://127.0.0.1:8000/api/books - список книг с именем автора
+2. http://127.0.0.1:8000/api/synopsis - список описания книг c их названием
+3. http://127.0.0.1:8000/api/authors - список авторов
+4. http://127.0.0.1:8000/api/user - список пользователей
+
+![111111111111](https://user-images.githubusercontent.com/96938106/180605967-33506027-a953-4539-a59b-ece5cc2ab17b.jpg)
+
+![2222222222](https://user-images.githubusercontent.com/96938106/180605971-4709bd12-ef30-49f5-91b8-88cb5f014083.jpg)
+
+![3333333333](https://user-images.githubusercontent.com/96938106/180605958-e07396e6-f874-409a-9b31-2d505d2f286a.jpg)
+
+![444444444444](https://user-images.githubusercontent.com/96938106/180605966-0ee6f3d9-f0ec-40d4-8e7a-f19c45ada6bd.png)
