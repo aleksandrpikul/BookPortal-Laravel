@@ -10,7 +10,6 @@
   <div class="container my-5 flex-fill">
     <div class="row justify-content-center">
       <div class="col-md-11">
-
         <form action="/book/<?php echo e($book->id); ?>/admin" method="POST"
               enctype="multipart/form-data" onsubmit="convertGenreArr()">
           <?php echo csrf_field(); ?>
@@ -63,14 +62,7 @@
 
 
               <input value="" type="text" id="genres" class="form-control" name="genres" hidden>
-
-
-
-
-
-
-
-              <div class="row mb-3">
+                              <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Цена</label>
                 <div class="col-sm-6">
                   <input value="<?php echo e($book->price); ?>" type="number" class="form-control" name="price">
@@ -125,7 +117,6 @@
       const convertGenreArr = () => {
           genreInput.value = genreArr.join('_');
       }
-      // https://love2dev.com/blog/javascript-remove-from-array/#remove-from-array-splice-value
       const arrayRemove = (arr, value) => {
           return arr.filter((loop) => {
               return loop !== value;

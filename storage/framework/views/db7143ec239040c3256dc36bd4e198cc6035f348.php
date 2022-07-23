@@ -57,43 +57,6 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script>
-        // $(document).on('click', '.register_btn', (e) => {
-        //     e.preventDefault();
-        //     const data = {
-        //         'email': $('.email').val(),
-        //         'name': $('.name').val(),
-        //         'password': $('.password').val(),
-        //         'password_confirmation': $('.password_confirmation').val()
-        //     }
-        //     console.log(data);
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //     });
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "/registerAjax",
-        //         dataType: "json",
-        //         data: data,
-        //         success: (response) => {
-        //             console.log(response);
-        //             console.log(response.message);
-        //             console.log(response.message.email[0]);
-        //             $.each(collection, function(indexInArray, valueOfElement) {
-
-        //             });
-        //             if (status.message === 200)
-        //                 window.location.href = '/login';
-        //         },
-        //         error: (a, b, c) => {
-        //             console.log(a);
-        //             console.log(b);
-        //             console.log(c);
-        //         }
-        //     });
-        // });
-
         const x = document.getElementById("password");
         const y = document.getElementById("confirmPassword");
         const checkPassword = document.getElementById('exampleCheck1');

@@ -17,7 +17,7 @@
                                 <td><?= date_format(date_create($receipt->date), "D, M d, Y g:i A"); ?></td>
                                 <td>
                                     <div class="d-grid gap-2 d-md-block">
-                                        <a class="btn btn-secondary" href="/history/<?php echo e($receipt->id); ?>">Детали</a>
+                                        <a class="btn btn-dark" href="/history/<?php echo e($receipt->id); ?>">Детали</a>
                                     </div>
                                 </td>
                             </tr>

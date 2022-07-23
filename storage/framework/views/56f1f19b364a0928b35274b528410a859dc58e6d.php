@@ -22,8 +22,8 @@
                                     <td><?php echo e($item->name); ?></td>
                                     <td><?php echo e($item->author); ?></td>
                                     <td>руб. <?php echo e($item->price); ?></td>
-                                    <td><?php echo e($item->quantity); ?> <?= $item->quantity > 1 ? 's' : '' ?></td>
-                                    <td>IDR <?php echo e($item->subtotal); ?></td>
+                                    <td><?php echo e($item->quantity); ?> <?= $item->quantity > 1 ? '' : '' ?></td>
+                                    <td>руб. <?php echo e($item->subtotal); ?></td>
                                     <td>
                                         <div class="d-grid gap-2 d-md-block">
                                             <a href="/book/<?php echo e($item->id); ?>" class="btn btn-dark">Описание</a>
@@ -43,7 +43,7 @@
                 <?php if($items): ?>
                     <form action="/checkout" method="POST">
                         <?php echo csrf_field(); ?>
-                        <button class="btn btn-dark" type="submit">Проверить</button>
+                        <button class="btn btn-dark" type="submit">Информация о заказе</button>
                     </form>
                 <?php endif; ?>
             </div>

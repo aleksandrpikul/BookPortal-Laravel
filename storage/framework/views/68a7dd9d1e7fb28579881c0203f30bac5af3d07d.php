@@ -24,12 +24,12 @@
                                 <tr>
                                     <td><?php echo e($transaction->book->name); ?></td>
                                     <td><?php echo e($transaction->book->author); ?></td>
-                                    <td>IDR <?php echo e($transaction->price); ?></td>
+                                    <td>руб. <?php echo e($transaction->price); ?></td>
                                     <td><?php echo e($transaction->quantity); ?> <?= $transaction->quantity > 1 ? 's' : '' ?></td>
-                                    <td>IDR <?= $subtotal; ?></td>
+                                    <td>руб. <?= $subtotal; ?></td>
                                     <td>
                                         <div class="d-grid gap-2 d-md-block">
-                                            <a class="btn btn-secondary" href="/book/<?php echo e($transaction->book->id); ?>">Описание</a>
+                                            <a class="btn btn-dark" href="/book/<?php echo e($transaction->book->id); ?>">Описание</a>
                                         </div>
                                     </td>
                                 </tr>

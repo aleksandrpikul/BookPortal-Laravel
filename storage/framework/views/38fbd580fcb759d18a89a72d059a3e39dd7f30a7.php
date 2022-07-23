@@ -7,6 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
       <!-- admin Navbar -->
       <?php if( auth()->user() !== null && auth()->user()['role']['id'] === 1 ): ?>
         <ul class="navbar-nav ms-auto">
@@ -46,7 +47,6 @@
 
     <!-- Member Navbar -->
       <?php if( auth()->user() !== null && auth()->user()['role']['id'] === 2): ?>
-
         <ul class="navbar-nav ms-auto">
           <div class="btn-group">
             <li class="nav-item">
