@@ -1,5 +1,5 @@
-# Интернет-магазин книг.
-PHP, HTML, REST API, Laravel, Docker.
+# Интернет-магазин книг
+PHP, HTML, REST API, Laravel, Docker
 # Как запустить
 1. В терминале: docker-compose up -d
 2. В терминале: docker exec -it app bash
