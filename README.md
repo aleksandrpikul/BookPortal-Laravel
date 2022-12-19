@@ -1,13 +1,17 @@
 # Интернет-магазин книг.
-PHP, HTML, REST API, Laravel.
+PHP, HTML, REST API, Laravel, Docker.
 # Как запустить
-1. В терминале: composer install
-2. Изменить в .env название базы данных
-3. В терминале: php artisan key:generate
-4. В терминале: php artisan migrate:fresh --seed
-5. В терминале: php artisan storage:link
-6. В терминале: php artisan serve 
-7. Запустить в браузере http://127.0.0.1:8000/
+1. В терминале: docker-compose up -d
+2. В терминале: docker exec -it app bash
+3. В терминале: composer install
+4. Изменить в .env название базы данных
+5. В терминале: php artisan key:generate
+6. В терминале: php artisan migrate:fresh --seed
+7. В терминале: php artisan storage:link
+8. В терминале: php artisan serve 
+9. Запустить в браузере http://127.0.0.1:8000/
+
+Для выключения контейнера: docker-compose down
 
 ![a](https://user-images.githubusercontent.com/96938106/180477154-ede4a215-3432-4ef3-8b1e-1ee34d582ae4.png)
 
